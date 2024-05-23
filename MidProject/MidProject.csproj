@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46519461-27C4-4AC0-8F89-46296CCA2EC2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MidProject</RootNamespace>
+    <AssemblyName>MidProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\Burhan Ahmad\Downloads\PcWonderland.com_Guna_UI_Framework_Ultimate_2\PcWonderland.com_Guna_UI_Framework_Ultimate_2\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.3\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.3\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="generateReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generateReports.Designer.cs">
+      <DependentUpon>generateReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\advisorReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\advisorReport.Designer.cs">
+      <DependentUpon>advisorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\evaluationReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\evaluationReport.Designer.cs">
+      <DependentUpon>evaluationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\groupReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\groupReport.Designer.cs">
+      <DependentUpon>groupReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\projectReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\projectReport.Designer.cs">
+      <DependentUpon>projectReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\studentReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\studentReport.Designer.cs">
+      <DependentUpon>studentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\addStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\addStudent.Designer.cs">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor\addAdvisor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advisor\addAdvisor.Designer.cs">
+      <DependentUpon>addAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor\assignAdvisor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advisor\assignAdvisor.Designer.cs">
+      <DependentUpon>assignAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor\deleteAdvisor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advisor\deleteAdvisor.Designer.cs">
+      <DependentUpon>deleteAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor\updateAdvisor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advisor\updateAdvisor.Designer.cs">
+      <DependentUpon>updateAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor\viewAdvisor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advisor\viewAdvisor.Designer.cs">
+      <DependentUpon>viewAdvisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Student\deleteStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\deleteStudent.Designer.cs">
+      <DependentUpon>deleteStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluation\addEvaluation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Evaluation\addEvaluation.Designer.cs">
+      <DependentUpon>addEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluation\deleteEvaluation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Evaluation\deleteEvaluation.Designer.cs">
+      <DependentUpon>deleteEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluation\markEvaluation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Evaluation\markEvaluation.Designer.cs">
+      <DependentUpon>markEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluation\updateEvaluation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Evaluation\updateEvaluation.Designer.cs">
+      <DependentUpon>updateEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Evaluation\viewEvaluation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Evaluation\viewEvaluation.Designer.cs">
+      <DependentUpon>viewEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\addGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Groups\addGroup.Designer.cs">
+      <DependentUpon>addGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\addStuInGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Groups\addStuInGroup.Designer.cs">
+      <DependentUpon>addStuInGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\viewStudentGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Groups\viewStudentGroup.Designer.cs">
+      <DependentUpon>viewStudentGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\removeStuFromGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Groups\removeStuFromGroup.Designer.cs">
+      <DependentUpon>removeStuFromGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\viewGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Groups\viewGroup.Designer.cs">
+      <DependentUpon>viewGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Projects\addProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Projects\addProject.Designer.cs">
+      <DependentUpon>addProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\assignProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Projects\assignProject.Designer.cs">
+      <DependentUpon>assignProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\deleteGroupProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Projects\deleteGroupProject.Designer.cs">
+      <DependentUpon>deleteGroupProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\deleteProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Projects\deleteProject.Designer.cs">
+      <DependentUpon>deleteProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\updateProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Projects\updateProject.Designer.cs">
+      <DependentUpon>updateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\viewGroupProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Projects\viewGroupProject.Designer.cs">
+      <DependentUpon>viewGroupProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\viewProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Projects\viewProject.Designer.cs">
+      <DependentUpon>viewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="projectManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="projectManagement.Designer.cs">
+      <DependentUpon>projectManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="groupManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="groupManagement.Designer.cs">
+      <DependentUpon>groupManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evaluationManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evaluationManagement.Designer.cs">
+      <DependentUpon>evaluationManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="advisorManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="advisorManagement.Designer.cs">
+      <DependentUpon>advisorManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="studentManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="studentManagement.Designer.cs">
+      <DependentUpon>studentManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\updateStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\updateStudent.Designer.cs">
+      <DependentUpon>updateStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\viewStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\viewStudent.Designer.cs">
+      <DependentUpon>viewStudent.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="generateReports.resx">
+      <DependentUpon>generateReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\advisorReport.resx">
+      <DependentUpon>advisorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\evaluationReport.resx">
+      <DependentUpon>evaluationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\groupReport.resx">
+      <DependentUpon>groupReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\projectReport.resx">
+      <DependentUpon>projectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\studentReport.resx">
+      <DependentUpon>studentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\addStudent.resx">
+      <DependentUpon>addStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advisor\addAdvisor.resx">
+      <DependentUpon>addAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advisor\assignAdvisor.resx">
+      <DependentUpon>assignAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advisor\deleteAdvisor.resx">
+      <DependentUpon>deleteAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advisor\updateAdvisor.resx">
+      <DependentUpon>updateAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advisor\viewAdvisor.resx">
+      <DependentUpon>viewAdvisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\deleteStudent.resx">
+      <DependentUpon>deleteStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\addEvaluation.resx">
+      <DependentUpon>addEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\deleteEvaluation.resx">
+      <DependentUpon>deleteEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\markEvaluation.resx">
+      <DependentUpon>markEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\updateEvaluation.resx">
+      <DependentUpon>updateEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation\viewEvaluation.resx">
+      <DependentUpon>viewEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\addGroup.resx">
+      <DependentUpon>addGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\addStuInGroup.resx">
+      <DependentUpon>addStuInGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\viewStudentGroup.resx">
+      <DependentUpon>viewStudentGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\removeStuFromGroup.resx">
+      <DependentUpon>removeStuFromGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\viewGroup.resx">
+      <DependentUpon>viewGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\addProject.resx">
+      <DependentUpon>addProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\assignProject.resx">
+      <DependentUpon>assignProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\deleteGroupProject.resx">
+      <DependentUpon>deleteGroupProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\deleteProject.resx">
+      <DependentUpon>deleteProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\updateProject.resx">
+      <DependentUpon>updateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\viewGroupProject.resx">
+      <DependentUpon>viewGroupProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\viewProject.resx">
+      <DependentUpon>viewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="projectManagement.resx">
+      <DependentUpon>projectManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="groupManagement.resx">
+      <DependentUpon>groupManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="evaluationManagement.resx">
+      <DependentUpon>evaluationManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="advisorManagement.resx">
+      <DependentUpon>advisorManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentManagement.resx">
+      <DependentUpon>studentManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\updateStudent.resx">
+      <DependentUpon>updateStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\viewStudent.resx">
+      <DependentUpon>viewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profit-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADVISO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EVALUATION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GROUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HOME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\STUDENT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profit-report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vibrant-pistachio-green-textured-background-image_13646568.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UET Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stu.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
